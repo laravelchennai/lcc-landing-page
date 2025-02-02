@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\MembershipController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,9 +18,10 @@ Route::prefix('meetups')->group(function () {
 
 // Membership
 Route::prefix('membership')->group(function () {
-    return view('vadivelu-coming-soon');
-//    Route::get('/register', [MembershipController::class, 'create'])->name('membership.register');
-//    Route::post('/register', [MembershipController::class, 'store'])->name('membership.store');
+//    return view('vadivelu-coming-soon');
+    Route::get('/', [MembershipController::class, 'index'])->name('membership.register');
+    Route::get('/membership-signup', [MembershipController::class, 'index'])->name('membership.signup');
+    Route::post('/membership-signup', [MembershipController::class, 'store'])->name('membership.store');
 //    Route::get('/list', [MembershipController::class, 'index'])->name('membership.list');
 });
 
