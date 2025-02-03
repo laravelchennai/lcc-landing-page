@@ -19,6 +19,7 @@
 @include('layouts.partials.navbar')
 @yield('content')
 
+@include('layouts.partials.footer')
 @yield('js')
 </body>
 </html>

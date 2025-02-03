@@ -112,10 +112,10 @@
         </div>
 
         <div class="text-gray-600 body-font relative">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-32 mx-auto">
                 <div class="flex flex-col text-center w-full mb-12">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Membership page-ku vanthuteenga, sariyana decision!</h1>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Form-a fill panni anuppunga... apram enga admins verify panni next step-ku kootitu povanga!</p>
                 </div>
                 <form x-data="membership_form()" @submit="handleSubmit" action="{{ route('membership.store') }}" method="POST">
                     @csrf
@@ -126,6 +126,14 @@
                             </div>
                         @endif
 
+                        @if($errors)
+                            @foreach($errors->all() as $error)
+                                    <div class="mb-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg">
+                                        {{ $error }}
+                                    </div>
+                            @endforeach
+                        @endif
+
                         <div class="flex flex-wrap -m-2">
                             <div class="p-2 w-1/2">
                                 <div class="relative">
@@ -134,9 +142,6 @@
                                     <input id="name" name="name" type="text"
                                            value="{{ old('name') }}"
                                            class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring @error('name') border-red-500 @enderror">
-                                    @error('name')
-                                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                                    @enderror
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
@@ -144,28 +149,36 @@
                                     <label for="email" class="leading-7 text-sm text-gray-600">Email
                                         <span class="text-red-500">*</span></label>
                                     </label>
-                                    <input id="email" name="email" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <input id="email" name="email" type="text" value="{{ old("email") }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring" v>
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
                                 <div class="relative">
                                     <label for="phone" class="leading-7 text-sm text-gray-600">Phone
                                         <span class="text-red-500">*</span></label>
-                                    <input id="phone" name="phone" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
                                 <div class="relative">
                                     <label for="company" class="leading-7 text-sm text-gray-600">Current Company
                                     </label>
-                                    <input id="company" name="current_company" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <input id="company" name="current_company" type="text" value="{{ old('current_company') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
                                 <div class="relative">
                                     <label for="years_of_experience" class="leading-7 text-sm text-gray-600">Years of Experience
                                         <span class="text-red-500">*</span></label></label>
-                                    <input id="years_of_experience" name="years_of_experience" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <select id="years_of_experience" name="years_of_experience"
+                                            class="block w-full px-4  py-2.5 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                        <option value="" disabled selected>Select experience</option>
+                                        <option value="0">New to Laravel</option>
+                                        <option value="1-2">1-2 years</option>
+                                        <option value="3-5">3-5 years</option>
+                                        <option value="6-9">6-9 years</option>
+                                        <option value="10+">10+ years</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
@@ -174,7 +187,7 @@
                                         <span class="text-red-500">*</span></label>
                                     <input type="hidden" name="technologies" x-model="selectedOptions">
                                     <div class="mt-2 relative">
-                                        <button type="button" @click="open = !open" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        <button type="button" @click="open = !open" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <span class="block truncate" x-text="selectedOptions.length ? selectedOptions.join(', ') : 'Select options'"></span>
                                             <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                                                         <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -268,7 +281,7 @@
                             <div class="p-2 w-full">
                                 <button  type="submit" :disabled="!isFormValid"
                                          x-text="isUploading ? 'Uploading...' : 'Submit'"
-                                        class="flex mx-auto text-white bg-[#F9484A] border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg disabled:opacity-50">
+                                        class="flex mx-auto text-white bg-[#F9484A] border-0 py-2 px-8 focus:outline-none hover:bg-[#e61c1e] rounded text-lg disabled:opacity-50">
                                 </button>
                             </div>
                         </div>
@@ -276,9 +289,5 @@
                 </form>
             </div>
         </div>
-
-
-    </div>
-
 @endsection
 

@@ -13,9 +13,10 @@ class MembershipController extends Controller
     {
         $technologies = TechnologiesEnum::values();
 
+        $options = array_map(fn($tech) => ucfirst($tech), $technologies);
 
         return view('frontend.membership-signup')
-            ->with('technologies', $technologies);
+            ->with('technologies', $options);
     }
 
     public function store(Request $request)
@@ -25,7 +26,7 @@ class MembershipController extends Controller
             'email' => 'required|email|unique:memberships,email',
             'phone' => 'required|string|max:20',
             'current_company' => 'nullable|string|max:255',
-            'years_of_experience' => 'required|numeric|min:0',
+            'years_of_experience' => 'required|string',
             'technologies' => 'required|min:1',
             'file_path' => 'required|string',
             'is_available_freelance' => 'boolean',
@@ -55,6 +56,6 @@ class MembershipController extends Controller
 
         return redirect()
            ->back()
-            ->with('success', 'Your membership application has been submitted successfully!');
+            ->with('success', 'Sari, membership request send aayiduchu... ippo admin paarthu solluvaanga!');
     }
 }
