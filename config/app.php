@@ -15,6 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'laravel_chennai_forum_url' => env('LARAVEL_CHENNAI_FORUM_URL', ''),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -122,5 +123,6 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
 
 ];
