@@ -10,10 +10,12 @@ class Membership extends Model
         'name',
         'email',
         'data',
+        'status'
     ];
 
 
     protected $casts = [
-        'data' => 'json'
+        'data' => 'json',
+        'data.technologies' => 'array'
     ];
 }

@@ -63,6 +63,12 @@
                 <p class="mt-8 text-lg sm:text-xl lg:text-2xl font-medium text-gray-500">
                     We're coming back. திரும்ப வந்துட்டோம் னு சொல்லு 🔥
                 </p>
+                <p class="mt-8 text-lg sm:text-xl lg:text-xl font-regular text-gray-500">
+                    அது varaikum... <a class="underline" target="_blank" href="{{ route('membership.register') }}">membership form</a> fill பண்ணிக்கோ! Laravel Chennai community ku unga entry seal பண்ணிடலாம்! 📝🔥
+                </p>
+
+
+
 
             <!-- GitHub Community Link -->
                 <div class="mt-8 mx-auto text-center">

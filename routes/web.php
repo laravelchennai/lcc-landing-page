@@ -20,7 +20,6 @@ Route::prefix('meetups')->group(function () {
 Route::prefix('membership')->group(function () {
 //    return view('vadivelu-coming-soon');
     Route::get('/', [MembershipController::class, 'index'])->name('membership.register');
-    Route::get('/membership-signup', [MembershipController::class, 'index'])->name('membership.signup');
     Route::post('/membership-signup', [MembershipController::class, 'store'])->name('membership.store');
 //    Route::get('/list', [MembershipController::class, 'index'])->name('membership.list');
 });
