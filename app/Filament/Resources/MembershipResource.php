@@ -57,7 +57,17 @@ class MembershipResource extends Resource
                 TextColumn::make('email'),
                 TextColumn::make('data.phone')->label('Phone'),
                 TextColumn::make('created_at')->label('Applied on'),
+                TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        MembershipStatusEnum::APPLIED => 'info',
+                        MembershipStatusEnum::ACTIVE => 'success',
+                        MembershipStatusEnum::UNDER_REVIEW => 'warning',
+                        MembershipStatusEnum::APPROVED  => 'success',
+                        MembershipStatusEnum::REJECTED => 'danger',
+                        MembershipStatusEnum::SUSPENDED => 'danger',
 
+                    })
             ])
             ->filters([
                 //
