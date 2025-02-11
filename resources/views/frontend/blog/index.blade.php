@@ -24,7 +24,7 @@
    <div class="flex flex-col">
        @forelse($blogs as $blog)
            <a href="{{ route('blog.show',$blog->slug) }}">
-               <div class="w-full shadow block border border-lighter mb-10 p-5 rounded-lg">
+               <div class="bg-white w-full shadow-md block border border-lighter mb-10 p-5 rounded-lg">
                    <div class="flex flex-col justify-between flex-1">
                        <img src="{{ asset($blog->featured_image) }}" class="w-full rounded-xl" title="Cynthia Bell McGills">
                        <div>

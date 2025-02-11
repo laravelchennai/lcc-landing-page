@@ -7,7 +7,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
         .bg-noise {
-            background: url("{{ asset('noise.png') }}") 323px repeat;
+            background: url("{{ asset('noise.png') }}") 500px repeat;
 
         }
     </style>
@@ -15,7 +15,7 @@
     @routes
 </head>
 
-<body class="">
+<body class="bg-noise">
 @include('layouts.partials.navbar')
 @yield('content')
 

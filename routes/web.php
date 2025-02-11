@@ -45,11 +45,14 @@ Route::prefix('talks')->group(function () {
 });
 
 // Blogs
-Route::prefix('blog')->group(function () {
-//    return view('vadivelu-coming-soon');
-    Route::get('/', [BlogController::class, 'index'])->name('blog.index');
-    Route::get('/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::domain(config('app.laravel_chennai_blog_domain'))->group(function () {
+    Route::prefix('blogs')->group(function () {
+        Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+        Route::get('/{slug}', [BlogController::class, 'show'])->name('blog.show');
 });
+
+});
+
 
 // resources for beginners
 Route::prefix('resources')->group(function () {
