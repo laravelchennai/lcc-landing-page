@@ -119,7 +119,7 @@
                 </div>
                 <form x-data="membership_form()" @submit="handleSubmit" action="{{ route('membership.store') }}" method="POST">
                     @csrf
-                    <div class="lg:w-1/2 md:w-2/3 mx-auto bg-white p-4 rounded-xl">
+                    <div class="lg:w-3/4 md:w-2/3 mx-auto bg-white p-4 rounded-xl">
                         @if(session('success'))
                             <div class="mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg">
                                 {{ session('success') }}
@@ -141,7 +141,7 @@
                                         <span class="text-red-500">*</span></label>
                                     <input id="name" name="name" type="text"
                                            value="{{ old('name') }}"
-                                           class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring @error('name') border-red-500 @enderror">
+                                           class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 focus:outline-none focus:ring @error('name') border-red-500 @enderror">
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
@@ -149,21 +149,36 @@
                                     <label for="email" class="leading-7 text-sm text-gray-600">Email
                                         <span class="text-red-500">*</span></label>
                                     </label>
-                                    <input id="email" name="email" type="text" value="{{ old("email") }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring" v>
+                                    <input id="email" name="email" type="text" value="{{ old("email") }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-500 focus:ring-opacity-40 focus:outline-none focus:ring" v>
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
                                 <div class="relative">
                                     <label for="phone" class="leading-7 text-sm text-gray-600">Phone
                                         <span class="text-red-500">*</span></label>
-                                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-500  focus:ring-opacity-40 focus:outline-none focus:ring">
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
                                 <div class="relative">
                                     <label for="company" class="leading-7 text-sm text-gray-600">Current Company
                                     </label>
-                                    <input id="company" name="current_company" type="text" value="{{ old('current_company') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                    <input id="company" name="current_company" type="text" value="{{ old('current_company') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-500  focus:ring-opacity-40 focus:outline-none focus:ring">
+                                </div>
+                            </div>
+                            <div class="p-2 w-1/2">
+                                <label for="company" class="leading-7 text-sm text-gray-600">Github Profile
+                                </label>
+                                <div class="flex items-center mt-2">
+                                    <p class="py-2.5 px-3 text-gray-500 bg-gray-100 border border-r-0 rtl:rounded-r-lg rtl:rounded-l-none rtl:border-l-0 rtl:border-r rounded-l-lg">@</p>
+                                    <input type="text" placeholder="Just your username, e.g. taylorotwell" class="block w-full rounded-l-none rtl:rounded-l-lg rtl:rounded-r-none placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 d" />
+                                </div>
+                            </div>
+                            <div class="p-2 w-1/2">
+                                <div class="relative">
+                                    <label for="company" class="leading-7 text-sm text-gray-600">LinkedIn Profile
+                                    </label>
+                                    <input id="company" name="current_company" type="text" placeholder="Your linkedIn Profile URl,e.g. https://www.linkedin.com/in/taylorotwell" value="{{ old('current_company') }}" class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-500  focus:ring-opacity-40 focus:outline-none focus:ring placeholder:text-sm">
                                 </div>
                             </div>
                             <div class="p-2 w-1/2">
@@ -171,7 +186,7 @@
                                     <label for="years_of_experience" class="leading-7 text-sm text-gray-600">Years of Experience
                                         <span class="text-red-500">*</span></label></label>
                                     <select id="years_of_experience" name="years_of_experience"
-                                            class="block w-full px-4  py-2.5 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                            class="block w-full px-4  py-2.5 mt-2 text-gray-700 border border-gray-300 rounded-md focus:border-red-400 focus:ring-red-500  focus:ring-opacity-40 focus:outline-none focus:ring">
                                         <option value="" disabled selected>Select experience</option>
                                         <option value="0">New to Laravel</option>
                                         <option value="1-2">1-2 years</option>
@@ -187,7 +202,7 @@
                                         <span class="text-red-500">*</span></label>
                                     <input type="hidden" name="technologies" x-model="selectedOptions">
                                     <div class="mt-2 relative">
-                                        <button type="button" @click="open = !open" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        <button type="button" @click="open = !open" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 sm:text-sm">
                                             <span class="block truncate" x-text="selectedOptions.length ? selectedOptions.join(', ') : 'Select options'"></span>
                                             <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                                                         <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -201,9 +216,9 @@
 
                                         <div x-show="open" @click.away="open = false" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-2 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" style="display: none;">
                                             <template x-for="option in options" :key="option">
-                                                <div @click="toggleOption(option)" class="cursor-pointer select-none relative py-2 pl-3 pr-9 hover:bg-indigo-600 hover:text-white">
+                                                <div @click="toggleOption(option)" class="cursor-pointer select-none relative py-2 pl-3 pr-9 hover:bg-red-600 hover:text-white">
                                                     <span x-text="option" :class="{ 'font-semibold': selectedOptions.includes(option) }" class="block truncate"></span>
-                                                    <span x-show="selectedOptions.includes(option)" class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 hover:text-white">
+                                                    <span x-show="selectedOptions.includes(option)" class="absolute inset-y-0 right-0 flex items-center pr-4 text-red   -600 hover:text-white">
                                                         <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                                 fill="currentColor">
                                                             <path fill-rule="evenodd"
