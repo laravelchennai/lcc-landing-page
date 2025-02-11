@@ -7,13 +7,20 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "benbjurstrom/prezet": "1.0.0-rc5",
         "filament/filament": "^3.2",
         "laravel/framework": "^11.31",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "tightenco/ziggy": "^2.5"
+        "tightenco/ziggy": "^2.5",
+        "themsaid/wink": "dev-l11-compatibility"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel-shift/wink.git"
+        }
+    ],
+
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
