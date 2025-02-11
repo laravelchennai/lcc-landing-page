@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'storage_disk' => env('WINK_STORAGE_DISK', 'local'),
+    'storage_disk' => env('WINK_STORAGE_DISK', 'public'),
 
     'storage_path' => env('WINK_STORAGE_PATH', 'public/wink/images'),
 
@@ -91,7 +91,7 @@ return [
         |
         */
 
-        'default' => 'markdown',
+        'default' => null,
 
     ],
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Frontend\MembershipController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,9 +46,9 @@ Route::prefix('talks')->group(function () {
 
 // Blogs
 Route::prefix('blog')->group(function () {
-    return view('vadivelu-coming-soon');
-//    Route::get('/', [BlogController::class, 'index'])->name('blog.index');
-//    Route::get('/{slug}', [BlogController::class, 'show'])->name('blog.show');
+//    return view('vadivelu-coming-soon');
+    Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/{slug}', [BlogController::class, 'show'])->name('blog.show');
 });
 
 // resources for beginners
@@ -75,3 +76,11 @@ Route::prefix('talks')->group(function () {
     return view('vadivelu-coming-soon');
 });
 
+
+Route::get('/mark', function () {
+    $markdown = <<<'MARKDOWN'
+
+    MARKDOWN;
+
+    return view('frontend.blog.test', ['markdown' => $markdown]);
+});
