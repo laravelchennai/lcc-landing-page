@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('coming-soon');
 });
 
+
+Route::redirect('/reminder', 'https://www.canva.com/design/DAGicS7IZ5Y/KL9Gdqxz2b6XMqFuaSapRw/watch');
+
 // routes/web.php
 Route::get('/kapathunga-gurunadha', function () {
     return view('kapathunga-gurunadha');

@@ -62,7 +62,7 @@
                 <div class="p-4">
                     <a href="{{ route('kapathunga.gurunadha') }}" 
                     class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold text-sm rounded-md shadow">
-                            Go to Kapathunga Gurunadh
+                            Go to Kapathunga Gurunadha
                     </a>
                 </div>
                 
@@ -71,7 +71,7 @@
                     We're coming back. திரும்ப வந்துட்டோம் னு சொல்லு 🔥
                 </p>
                 <p class="mt-8 text-lg sm:text-xl lg:text-xl font-regular text-gray-500">
-                    அது varaikum... <a class="underline" target="_blank" href="{{ route('membership.register') }}">membership form</a> fill பண்ணிக்கோ! Laravel Chennai community ku unga entry seal பண்ணிடலாம்! 📝🔥
+                    அது varaikum... <a class="underline" target="_blank" href="https://nas.io/laravel-chennai-community">membership form</a> fill பண்ணிக்கோ! Laravel Chennai community ku unga entry seal பண்ணிடலாம்! 📝🔥
                 </p>
 
 
