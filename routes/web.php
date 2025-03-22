@@ -13,7 +13,7 @@ Route::get('/kapathunga-gurunadha', function () {
     return view('kapathunga-gurunadha');
 })->name('kapathunga.gurunadha');
 
-Route::get('/kapathunga-gurunadh/next-step', function (Illuminate\Http\Request $request) {
+Route::get('/kapathunga-gurunadha/next-step', function (Illuminate\Http\Request $request) {
     return view('booking-confirm', [
         'email' => $request->query('email'),
         'event' => $request->query('eventTypeSlug'),
