@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-noise">
-    <div class="relative h-screen overflow-hidden bg-gradient-to-b from-gray-100 via-white to-white">
+    <div class="relative  bg-gradient-to-b from-gray-100 via-white to-white">
         <!-- Header -->
         <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-center p-8">
@@ -27,7 +27,7 @@
 
 
         <!-- Background Image -->
-        <div class="absolute inset-x-0 bottom-0 opacity-[0.3] pointer-events-none fixed">
+        <div class="absolute h-scree overflow-hidden inset-x-0 bottom-0 opacity-[0.3] pointer-events-none fixed">
             <img src="{{ asset('Group.svg') }}" alt="Background Image" class="w-full object-bottom object-cover">
         </div>
 
@@ -59,6 +59,13 @@
                             alt="Laravel Chennai Logo">
                     </a>
                 </div>
+                <div class="p-4">
+                    <a href="{{ route('kapathunga.gurunadha') }}" 
+                    class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold text-sm rounded-md shadow">
+                            Go to Kapathunga Gurunadh
+                    </a>
+                </div>
+                
                 <!-- Coming Soon Text -->
                 <p class="mt-8 text-lg sm:text-xl lg:text-2xl font-medium text-gray-500">
                     We're coming back. திரும்ப வந்துட்டோம் னு சொல்லு 🔥
