@@ -5,7 +5,7 @@ use App\Http\Controllers\Frontend\MembershipController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('coming-soon');
+    return view('index');
 });
 
 
